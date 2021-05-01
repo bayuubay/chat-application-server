@@ -18,7 +18,7 @@ const server = http.createServer(app);
 // const io = socketio(server);
 const io = require("socket.io")(server, {
   cors: {
-    origin: "https://chat-apps-client.herokuapp.com/",
+    origin: "https://chat-apps-client.herokuapp.com",
     methods: ["GET", "POST"],
     allowedHeaders: ["my-custom-header"],
     credentials: true,
