@@ -4,7 +4,7 @@ const database = require("./config/db");
 database();
 // const socketio = require("socket.io");
 const cors = require("cors");
-
+const router = require("./router");
 const { addUser, getUser, removeUser } = require("./src/controllers/users");
 const { newMessage } = require("./src/controllers/chat");
 
@@ -12,7 +12,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(router);
 const server = http.createServer(app);
 
 // const io = socketio(server);
